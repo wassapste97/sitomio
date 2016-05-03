@@ -5,9 +5,11 @@ class Pages extends CI_controller {
      public function __construct(){
         parent::__construct();
         $this->load->model('persona_model');
+         $this->load->model('controlloDati_model');
         $this->load->helper('url_helper');
         $this->load->helper('form');
         $this->load->library('form_validation');
+         
      }
     public function index(){
         $data['pagina']="signup";
@@ -50,9 +52,14 @@ class Pages extends CI_controller {
             $parola_chiave=password_hash($password, PASSWORD_DEFAULT);
             $email =$this->input->post('email');
             $nascita=$this->input->post('nascita');
-            $this->persona_model->aggiungiPersona($nome,$cognome,$username,$parola_chiave,$id,$email,$nascita);
-        }   
-        redirect('/homepage/index');        
+            $risultato=$this->controlloDati_model->controlloEmail($email);
+            if($risultato==false) {
+                $this->persona_model->aggiungiPersona($nome, $cognome, $username, $parola_chiave, $id, $email, $nascita);
+            }
+            else{
+                echo"Email già presente,sei già iscritto";
+            }
+        }
     }
     
 

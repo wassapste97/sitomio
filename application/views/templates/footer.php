@@ -12,9 +12,7 @@
                 </a>
             </div>
 
-            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+            <p>Sito inizialmente pensato per un progetto scolastico, sicuramente in continuo sviluppo.
             </p>
 
         </div>
@@ -24,16 +22,14 @@
             <div class="row">
 
                 <div class="columns">
-                    <h3 class="address">Come Visit</h3>
+                    <h3 class="address">Sede</h3>
                     <p>
-                        1600 Amphitheatre Parkway<br>
-                        Mountain View, CA<br>
-                        94043 US
+                        Da qualche parte a milano
                     </p>
                 </div>
 
                 <div class="columns">
-                    <h3 class="social">socialize</h3>
+                    <h3 class="social">Social</h3>
                     <ul>
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Twitter</a></li>
@@ -42,11 +38,11 @@
                 </div>
 
                 <div class="columns last">
-                    <h3 class="contact">Contact Us</h3>
+                    <h3 class="contact">Contatti</h3>
                     <ul>
-                        <li><a href="tel:6473438234">647.343.8234</a></li>
+                        <li><a href="tel:3200176957">3200176957</a></li>
                         <li><a href="tel:1234567890">123.456.7890</a></li>
-                        <li><a href="mailto:someone@woo.com">someone@woosite.com</a></li>
+                        <li><a href="mailto:someone@woo.com">stefan.perez97@gmail.com</a></li>
                     </ul>
                 </div>
 
@@ -54,7 +50,7 @@
 
         </div>
 
-        <p class="copyright">&copy; 2014 Woo | Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a></p>
+        <p class="copyright">&copy; Stefan & Giuliano</p>
 
         <div id="go-top">
             <a class="smoothscroll" title="Back to Top" href="#hero"><i class="icon-up-open"></i></a>

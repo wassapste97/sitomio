@@ -29,5 +29,13 @@ class Persona_model extends CI_Model {
 					'birthday' => $nascita
 				);
 				$this->db->insert('persona', $data);
-	}	
+	}
+	public function getUser($email){
+		$q = $this -> db
+				   -> select('*')
+				   -> where('email', $email);
+		$query = $this->db->get('persona');	 
+		return $query->row();
+	}
+
 }

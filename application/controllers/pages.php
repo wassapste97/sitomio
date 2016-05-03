@@ -9,6 +9,7 @@ class Pages extends CI_controller {
         $this->load->helper('url_helper');
         $this->load->helper('form');
         $this->load->library('form_validation');
+        $this->load->library('session');
          
      }
     public function index(){
@@ -18,12 +19,24 @@ class Pages extends CI_controller {
         $this->load->view('firstpage');   
         $this->load->view('templates/footer');     
     }
-    public function conferma(){
+    public function login(){
         $email=$this->input->post('email');
         $password=$this->input->post('password');
         $esiste=$this->persona_model->verify($email,$password);
         if($esiste==true){
-            $this->load->view('signup');
+            //HO USATO LA SESSION, LEGGITI I TUTORIAL DI CODEIGNITER è UNA FIGATA. QUESTE VARIABILI SARANNO GLOBALI FINCHE 
+            //NON DECIDIAMO NOI DI CHIUDERE LA SESSION, VEDI LA VIEW "home.php"  PER VEDERE COME L'HO RICHIAMATA.
+            $userData=$this->persona_model->getUser($email);
+            $user = array(
+                    'username'  => $userData->username,
+                    'nome'  => $userData->nome,
+                    'cognome'  => $userData->cognome,
+                    'email'     => $userData->email,
+                    'id' => $userData->id,
+                    'stato' => '1'
+            );
+            $this->session->set_userdata($user);
+            $this->load->view('home');
         }
         else {
             $this->load->view('errore');    
@@ -53,8 +66,10 @@ class Pages extends CI_controller {
             $email =$this->input->post('email');
             $nascita=$this->input->post('nascita');
             $risultato=$this->controlloDati_model->controlloEmail($email);
-            if($risultato==false) {
+            $risultato2=$this->controlloDati_model->controlloUsername($username);
+            if($risultato==false&&$risultato2==false) {
                 $this->persona_model->aggiungiPersona($nome, $cognome, $username, $parola_chiave, $id, $email, $nascita);
+                
             }
             else{
                 echo"Email già presente,sei già iscritto";

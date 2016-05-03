@@ -41,9 +41,8 @@
                             <input type="password"  name="password" placeholder="password" required>
                           </div>
                       </div>  
-                   
                   <div class="form-group">
-                    <input type="submit" value="Log in" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    <input type="submit" value="Iscriviti" name="subscribe" id="mc-embedded-subscribe" class="button">
                   </div> 
                 </div>
 

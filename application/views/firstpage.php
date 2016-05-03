@@ -15,7 +15,7 @@
            <p>Se è un SocialNetwork per videogiocatori che tu cerchi, allora sei arrivato nel posto giusto.
            Organizza tornei, trova persone, esprimi le tue opinioni su videogiochi e tanto altro.</p>
          </div>
-          <?php echo form_open('pages/conferma') ; ?>
+          <?php echo form_open('pages/login') ; ?>
             <fieldset>
                   <div  align="center">
                       <div class="inline" class="form-group"> 

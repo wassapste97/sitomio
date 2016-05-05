@@ -56,7 +56,7 @@
         <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
 
         <ul id="nav" class="nav">
-            <li><a href="<?php echo base_url("index.php/pages");?>/">Me</a></li>
+            <li><a href="<?php echo base_url("index.php/Utente_controller");?>/">Me</a></li>
             <li><a href="<?php echo base_url("index.php/pages");?>/">Ricerca</a></li>
             <li><a href="<?php echo base_url("index.php/pages");?>/">Base</a></li>
             <li><a href="<?php echo base_url("index.php/pages");?>/">Tornei</a></li>

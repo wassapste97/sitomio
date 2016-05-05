@@ -36,7 +36,9 @@ class Pages extends CI_controller {
                     'stato' => '1'
             );
             $this->session->set_userdata($user);
+            $this->load->view('templatesHome/headerhome'); 
             $this->load->view('home');
+            $this->load->view('templatesHome/footerhome'); 
         }
         else {
             $this->load->view('errore');    

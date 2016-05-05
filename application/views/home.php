@@ -3,7 +3,7 @@
 
 <!-- Homepage Hero
 ================================================== -->
- <section id="hero">
+ <section id="features">
 
      <div class="row">
 

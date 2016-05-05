@@ -66,7 +66,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?php echo base_url();?>resources/js/jquery-1.10.2.min.js"><\/script>')</script>
 <script type="text/javascript" src="<?php echo base_url();?>resources/js/jquery-migrate-1.2.1.min.js"></script>
-
+<!-- side bar -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="<?php echo base_url();?>resources/js/sidebar.js"></script> 
+<!-- end -->
 <script src="<?php echo base_url();?>resources/js/jquery.flexslider.js"></script>
 <script src="<?php echo base_url();?>resources/js/waypoints.js"></script>
 <script src="<?php echo base_url();?>resources/js/jquery.fittext.js"></script>

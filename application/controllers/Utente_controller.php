@@ -9,6 +9,7 @@ class Utente_controller extends CI_controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $this->load->model('gestisciImm_model');
 
     }
     public function index(){
@@ -21,9 +22,23 @@ class Utente_controller extends CI_controller {
             echo 'Non hai inviato nessun file...';
             exit;
         }
-
         //percorso della cartella dove mettere i file caricati dagli utenti
         $uploaddir = "C:/xampp/htdocs/sitomio/resources/images";
+
+
+        //controllo se esiste già il file
+        $nome_file = $uploaddir . $_FILES['userfile']['name'];
+        if (file_exists($nome_file)) {
+            echo 'Il file esiste già';
+            exit;
+        }
+
+        //controllo se è un immagine
+        $is_img = getimagesize($_FILES['userfile']['tmp_name']);
+        if (!$is_img) {
+            echo 'Puoi inviare solo immagini';
+            exit;
+        }
 
         //Recupero il percorso temporaneo del file
         $userfile_tmp = $_FILES['userfile']['tmp_name'];
@@ -34,7 +49,10 @@ class Utente_controller extends CI_controller {
         //copio il file dalla sua posizione temporanea alla mia cartella upload
         if (move_uploaded_file($userfile_tmp, $uploaddir . $userfile_name)) {
             //Se l'operazione è andata a buon fine...
-            echo 'File inviato con successo.';
+            echo $uploaddir . $_FILES['userfile']['name'];
+            $prova = $uploaddir . $_FILES['userfile']['name'];
+            $this->gestisciImm_model->insePerco($prova);
+            
         }else{
             //Se l'operazione è fallta...
             echo 'Upload NON valido!';

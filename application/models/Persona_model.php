@@ -14,7 +14,6 @@ class Persona_model extends CI_Model {
 		if ($query->num_rows() <= 0) {
 			return false;
 		}
-		
 		// se la persona esiste, restiuisco true se la pwd è ok, fasle altrimenti
 		return password_verify($password , $query->row()->password);
 	}	
@@ -37,5 +36,16 @@ class Persona_model extends CI_Model {
 		$query = $this->db->get('persona');	 
 		return $query->row();
 	}
-
+	public function setOnline($id,$stato){
+	  $this->db->set('stato', $stato);
+      $this->db->where('id', $id);
+      $this->db->update('persona');
+	}
+	public function getUserOnline(){
+		$q = $this -> db
+				   -> select('*');
+		$query = $this->db->get('utenti_online');	 
+		return $query->result_array();
+	}
+	
 }

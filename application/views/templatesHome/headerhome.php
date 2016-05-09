@@ -24,10 +24,10 @@
     <link rel="stylesheet" href="<?php echo base_url();?>resources/css/animate.css">
     <link rel="stylesheet" href="<?php echo base_url();?>resources/css/prettyPhoto.css">
     <link rel="stylesheet" href="<?php echo base_url();?>resources/css/sidebar.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Script
     ================================================== -->
     <script src="<?php echo base_url();?>resources/js/modernizr.js"></script>
-
     <!-- Favicons
      ================================================== -->
     <link rel="shortcut icon" href="<?php echo base_url();?>resources/favicon.png" >
@@ -53,20 +53,22 @@
         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
         <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
         <ul id="nav" class="nav">
-            <li><a href="<?php echo base_url("index.php/pages");?>/"><?php echo $_SESSION['username'] ?></a></li>
-            <li><a href="<?php echo base_url("index.php/Utente_controller");?>/">Me</a></li>
+            <li><a href="<?php echo base_url("index.php/Utente_controller");?>/"><?php echo $_SESSION['username'] ?></a></li>
             <li><a href="<?php echo base_url("index.php/pages");?>/">Ricerca</a></li>
             <li><a href="<?php echo base_url("index.php/pages");?>/">Base</a></li>
             <li><a href="<?php echo base_url("index.php/pages");?>/">Tornei</a></li>
+            <li><a href="<?php echo base_url("index.php/pages");?>/logout"><i class="fa fa-power-off"></i></a></li>
         </ul> <!-- end #nav -->
     </nav> <!-- end #nav-wrap -->
+        
    <div id="site-wrapper">
       <nav class="menu" role="navigation">
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#"><a href="http://www.jqueryscript.net/gallery/">Gallery</a></a></li>
-              <li><a href="#">Contacts</a></li>
+             <?php foreach($user_online as $user_item): ?>
+                <?php if($user_item['username']!=$_SESSION['username']):?>   
+                    <li><a><?php echo $user_item['username'] ?></a></li>
+                <?php endif; ?>
+             <?php endforeach; ?>   
             </ul>
       </nav>
     <a href="#" class="nav-toggle"><span class="fa fa-bars"></span></a>

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>resources/css/media-queries.css">
     <link rel="stylesheet" href="<?php echo base_url();?>resources/css/animate.css">
     <link rel="stylesheet" href="<?php echo base_url();?>resources/css/prettyPhoto.css">
- 
+    
     <!-- Script
     ================================================== -->
     <script src="<?php echo base_url();?>resources/js/modernizr.js"></script>

@@ -2,16 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 //trapani sei gay
 class Pages extends CI_controller {
-     public function __construct(){
-        parent::__construct();
-        $this->load->model('persona_model');
-         $this->load->model('controlloDati_model');
-        $this->load->helper('url_helper');
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-        $this->load->library('session');
-         
-     }
+    public function __construct(){
+    parent::__construct();
+    $this->load->model('persona_model');
+     $this->load->model('controlloDati_model');
+    $this->load->helper('url_helper');
+    $this->load->helper('form');
+    $this->load->library('form_validation');
+    $this->load->library('session');
+     
+    }
     public function index(){
         $data['pagina']="signup";
         $data['opzione'] = "ISCRIVITI";
@@ -32,17 +32,24 @@ class Pages extends CI_controller {
                     'nome'  => $userData->nome,
                     'cognome'  => $userData->cognome,
                     'email'     => $userData->email,
-                    'id' => $userData->id,
-                    'stato' => '1'
+                    'id' => $userData->id
             );
+            //Gestione dell'online di un utente. 
+            $this->persona_model->setOnline($userData->id,true);
+            $data['user_online']=$this->persona_model->getUserOnline();
             $this->session->set_userdata($user);
-            $this->load->view('templatesHome/headerhome'); 
+            $this->load->view('templatesHome/headerhome',$data); 
             $this->load->view('home');
             $this->load->view('templatesHome/footerhome'); 
         }
         else {
             $this->load->view('errore');    
-        }
+        }  
+    }
+    public function logout(){
+        $this->persona_model->setOnline($_SESSION['id'] ,false);
+        $this->session->sess_destroy();
+        redirect('pages/index');
     }
     public function signup(){
             $data['pagina']="index";

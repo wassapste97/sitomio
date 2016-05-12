@@ -47,16 +47,16 @@
 <header>
 
     <div class="logo">
-        <a class="smoothscroll" href="#hero"><img alt="" src="<?php echo base_url();?>resources/images/logo.png"></a>
+        <a class="smoothscroll" href="<?php echo base_url("index.php/pages/base");?>"><img alt="" src="<?php echo base_url();?>resources/images/logo.png"></a>
     </div>
     <nav id="nav-wrap">
         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
         <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
         <ul id="nav" class="nav">
             <li><a href="<?php echo base_url("index.php/Utente_controller");?>/"><?php echo $_SESSION['username'] ?></a></li>
-            <li><a href="<?php echo base_url("index.php/pages");?>/">Ricerca</a></li>
-            <li><a href="<?php echo base_url("index.php/pages");?>/">Base</a></li>
-            <li><a href="<?php echo base_url("index.php/pages");?>/">Tornei</a></li>
+            <li><a href="<?php echo base_url("index.php/pages");?>/login">Ricerca</a></li>
+            <li><a href="<?php echo base_url("index.php/pages/base");?>/">Base</a></li>
+            <li><a href="<?php echo base_url("index.php/Torneo");?>/">Tornei</a></li>
             <li><a href="<?php echo base_url("index.php/pages");?>/logout"><i class="fa fa-power-off"></i></a></li>
         </ul> <!-- end #nav -->
     </nav> <!-- end #nav-wrap -->
@@ -64,9 +64,9 @@
    <div id="site-wrapper">
       <nav class="menu" role="navigation">
             <ul>
-             <?php foreach($user_online as $user_item): ?>
-                <?php if($user_item['username']!=$_SESSION['username']):?>   
-                    <li><a><?php echo $user_item['username'] ?></a></li>
+             <?php foreach($_SESSION['online'] as $online_user): ?>
+                <?php if($online_user['username']!=$_SESSION['username']):?>   
+                    <li><a><?php echo $online_user['username'] ?></a></li>
                 <?php endif; ?>
              <?php endforeach; ?>   
             </ul>

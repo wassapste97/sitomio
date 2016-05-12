@@ -19,6 +19,7 @@ class Admin extends MY_controller {
    public function verifica_password($id,$comando){
       $data['id']=$id;
       $data['comando']=$comando;
+      $data['controller']="admin";
       $this->load->view('admin/password',$data);
    }
    public function gestisci($id,$metodo) {
@@ -83,7 +84,7 @@ class Admin extends MY_controller {
          $this->admin_model->aggiungiAdmin($nome_cognome,$username,$parola_chiave,$id);
          $data['admin']=$this->admin_model->lista_admin();
       }  
-      redirect('/admin/index');     
+      redirect('admin/index');     
    }
    function logout(){
        header('HTTP/1.1 401 Unauthorized');

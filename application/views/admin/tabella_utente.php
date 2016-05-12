@@ -37,7 +37,7 @@
 									<td><?php echo $utente_item['username']; ?></td>
 									<td><?php echo $utente_item['email']; ?></td>
 									<td><?php echo $utente_item['stato']; ?></td>
-									<td><a href="<?php echo base_url("index.php/admin/verifica_password");?>/<?php echo $utente_item['id']; ?>/elimina" class="btn btn-md btn-danger btn-block" style="color:white">Elimina</a></td>
+									<td><a href="<?php echo base_url("index.php/admin_utente/verifica_password");?>/<?php echo $utente_item['id']; ?>/elimina" class="btn btn-md btn-danger btn-block" style="color:white">Elimina</a></td>
 								</tbody>
 							<?php endforeach; ?>
 						</table>

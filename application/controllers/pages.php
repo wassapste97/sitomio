@@ -19,6 +19,11 @@ class Pages extends CI_controller {
         $this->load->view('firstpage');   
         $this->load->view('templates/footer');     
     }
+    public function base(){
+        $this->load->view('templatesHome/headerhome'); 
+        $this->load->view('home');
+        $this->load->view('templatesHome/footerhome'); 
+    }
     public function login(){
         $email=$this->input->post('email');
         $password=$this->input->post('password');
@@ -26,19 +31,20 @@ class Pages extends CI_controller {
         if($esiste==true){
             //HO USATO LA SESSION, LEGGITI I TUTORIAL DI CODEIGNITER è UNA FIGATA. QUESTE VARIABILI SARANNO GLOBALI FINCHE 
             //NON DECIDIAMO NOI DI CHIUDERE LA SESSION, VEDI LA VIEW "home.php"  PER VEDERE COME L'HO RICHIAMATA.
+            $data['user_online']=$this->persona_model->getUserOnline();
             $userData=$this->persona_model->getUser($email);
             $user = array(
                     'username'  => $userData->username,
                     'nome'  => $userData->nome,
                     'cognome'  => $userData->cognome,
                     'email'     => $userData->email,
-                    'id' => $userData->id
+                    'id' => $userData->id,
+                    'online'=>$data['user_online']
             );
             //Gestione dell'online di un utente. 
             $this->persona_model->setOnline($userData->id,true);
-            $data['user_online']=$this->persona_model->getUserOnline();
             $this->session->set_userdata($user);
-            $this->load->view('templatesHome/headerhome',$data); 
+            $this->load->view('templatesHome/headerhome'); 
             $this->load->view('home');
             $this->load->view('templatesHome/footerhome'); 
         }

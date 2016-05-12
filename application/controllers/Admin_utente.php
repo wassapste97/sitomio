@@ -16,7 +16,10 @@ class Admin_utente extends MY_controller {
 		$this->load->view('admin/tabella_utente',$data);
 		$this->load->view('admin/template/footer');
 	}
-
-	
-
+	public function verifica_password($id,$comando){
+      $data['id']=$id;
+      $data['comando']=$comando;
+      $data['controller']="admin_utente";
+      $this->load->view('admin/password',$data);
+   }
 }

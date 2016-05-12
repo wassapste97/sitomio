@@ -38,10 +38,10 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Cambia Passowrd</h3>
+                        <h3 class="panel-title">Verifica password</h3>
                     </div>
                     <div class="panel-body">
-                    <?php echo form_open('/admin/gestisci/' . $id. '/'.$comando) ; ?>
+                    <?php echo form_open('/'.$controller.'/gestisci/' . $id. '/'.$comando) ; ?>
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">

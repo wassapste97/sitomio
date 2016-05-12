@@ -1,33 +1,24 @@
 <!-- Footer
 ================================================== -->
 <footer>
-
     <div class="row">
-
         <div class="six columns info">
-
             <div class="footer-logo">
                 <a href="#">
                     <img src="<?php echo base_url();?>resources/images/footer-logo.png" alt="" />
                 </a>
             </div>
-
             <p>Sito inizialmente pensato per un progetto scolastico, sicuramente in continuo sviluppo.
             </p>
-
         </div>
-
         <div class="six columns right-cols">
-
             <div class="row">
-
                 <div class="columns">
                     <h3 class="address">Sede</h3>
                     <p>
                         Da qualche parte a milano
                     </p>
                 </div>
-
                 <div class="columns">
                     <h3 class="social">Social</h3>
                     <ul>
@@ -36,7 +27,6 @@
                         <li><a href="#">GooglePlus</a></li>
                     </ul>
                 </div>
-
                 <div class="columns last">
                     <h3 class="contact">Contatti</h3>
                     <ul>
@@ -45,19 +35,13 @@
                         <li><a href="mailto:someone@woo.com">stefan.perez97@gmail.com</a></li>
                     </ul>
                 </div>
-
             </div> <!-- Nested Row End -->
-
         </div>
-
         <p class="copyright">&copy; Stefan & Giuliano</p>
-
         <div id="go-top">
             <a class="smoothscroll" title="Back to Top" href="#hero"><i class="icon-up-open"></i></a>
         </div>
-
     </div> <!-- Row End -->
-
 </footer> <!-- Footer End-->
 
 

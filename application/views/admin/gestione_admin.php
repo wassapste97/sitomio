@@ -12,7 +12,7 @@
 
 				<?php echo validation_errors(); ?>
 
-				<?php echo form_open('<?php echo base_url("index.php/admin/conferma");?>/' . $comando. '/'.$id) ; ?>
+				<?php echo form_open('admin/conferma/' . $comando. '/'.$id) ; ?>
 					
 					<fieldset>
 						<div class="form-group">

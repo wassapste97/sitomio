@@ -32,7 +32,7 @@
 									<td><?php echo $admin_item['id']; ?></td>
 									<td><?php echo $admin_item['nome_cognome']; ?></td>
 									<td><?php echo $admin_item['username']; ?></td>
-									<td><a href="<?php echo base_url("index.php/admin/gestisci");?>/<?php echo $admin_item['id']; ?>/modifica" class="btn btn-md btn-primary btn-block" style="color:white">Modifica</a></td>
+									<td><a href="<?php echo base_url("index.php/admin/verifica_password");?>/<?php echo $admin_item['id']; ?>/modifica" class="btn btn-md btn-primary btn-block" style="color:white">Modifica</a></td>
 									<td><a href="<?php echo base_url("index.php/admin/verifica_password");?>/<?php echo $admin_item['id']; ?>/elimina" class="btn btn-md btn-danger btn-block" style="color:white">Elimina</a></td>
 								</tbody>
 							<?php endforeach; ?>
